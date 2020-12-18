@@ -4,9 +4,9 @@ package NVKinhDoanhGUI;
 
 
 import BUS.ThongKeDoanhThuBUS;
-
+import BUS.ThongKePhieuDVBUS;
 import DTO.ThongKeDoanhThuDTO;
-
+import DTO.ThongKePhieuDVDTO;
 import Report.ExcelReport;
 import com.github.lgooddatepicker.components.DatePickerSettings;
 import java.awt.BorderLayout;

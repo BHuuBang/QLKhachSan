@@ -8,7 +8,7 @@ package MainFrame;
 import LeTanGUI.DatPhongGUI;
 import LeTanGUI.HuyDatPhongGUI;
 import LeTanGUI.ThanhToanGUI;
-
+import LeTanGUI.ThueDVGUI;
 import java.awt.*;
 import static java.awt.Frame.HAND_CURSOR;
 import java.awt.event.MouseEvent;
@@ -537,13 +537,13 @@ public class LeTanFrame extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 
-                /*ThueDVGUI thuedvGUI = new ThueDVGUI();
+                ThueDVGUI thuedvGUI = new ThueDVGUI();
                 pncontent.removeAll();
                 pncontent.add(thuedvGUI);
                 pncontent.setBounds(250, 0, 1350, 945);
                 pncontent.repaint();
                 thuedvGUI.revalidate();
-                thuedvGUI.repaint();*/
+                thuedvGUI.repaint();
                
 
                 c5.setBackground(color_part);

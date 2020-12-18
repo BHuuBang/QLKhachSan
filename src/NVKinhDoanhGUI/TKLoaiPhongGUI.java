@@ -7,9 +7,9 @@ package NVKinhDoanhGUI;
 
 
 import BUS.ThongKeLoaiPhongBUS;
-
+import BUS.ThongKePhieuDVBUS;
 import DTO.ThongKeLoaiPhongDTO;
-
+import DTO.ThongKePhieuDVDTO;
 import Report.ExcelReport;
 import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
