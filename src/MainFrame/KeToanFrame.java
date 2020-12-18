@@ -10,7 +10,6 @@ import KeToanGUI.TinhLuongGUI;
 import NVKinhDoanhGUI.KhachHangGUI;
 import NVKinhDoanhGUI.KhuyenMaiGUI;
 import NVKinhDoanhGUI.PhongGUI;
-
 import NVKinhDoanhGUI.TKDoanhThuGUI;
 import NVKinhDoanhGUI.TKLoaiPhongGUI;
 import NVKinhDoanhGUI.TKLuongGUI;
