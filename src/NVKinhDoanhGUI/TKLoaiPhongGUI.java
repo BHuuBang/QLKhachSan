@@ -7,7 +7,6 @@ package NVKinhDoanhGUI;
 
 
 import BUS.ThongKeLoaiPhongBUS;
-import BUS.ThongKePhieuDVBUS;
 import DTO.ThongKeLoaiPhongDTO;
 import DTO.ThongKePhieuDVDTO;
 import Report.ExcelReport;

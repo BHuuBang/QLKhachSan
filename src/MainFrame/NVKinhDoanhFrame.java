@@ -2,11 +2,11 @@
 package MainFrame;
 
 
-import NVKinhDoanhGUI.DichVuGUI;
+
 import NVKinhDoanhGUI.KhachHangGUI;
 import NVKinhDoanhGUI.KhuyenMaiGUI;
 import NVKinhDoanhGUI.PhongGUI;
-import NVKinhDoanhGUI.TKDichVuGUI;
+
 import NVKinhDoanhGUI.TKDoanhThuGUI;
 import NVKinhDoanhGUI.TKLoaiPhongGUI;
 import NVKinhDoanhGUI.TKLuongGUI;
@@ -493,14 +493,7 @@ public class NVKinhDoanhFrame extends JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                DichVuGUI dichvuGUI = new DichVuGUI();
-                pncontent.removeAll();
-                pncontent.add(dichvuGUI);
-                pncontent.setBounds(250, 0, 1350, 945);
-                pncontent.repaint();
-                dichvuGUI.revalidate();
-                dichvuGUI.repaint();
-               
+                
                 
                 c4.setBackground(color_part);
                 c9.setBackground(color_background);
@@ -651,13 +644,7 @@ public class NVKinhDoanhFrame extends JFrame {
             // DỊCH VỤ GUI
             @Override
             public void mouseClicked(MouseEvent e) {
-                TKDichVuGUI tkdichvuGUI = new TKDichVuGUI();
-                pncontent.removeAll();
-                pncontent.add(tkdichvuGUI);
-                pncontent.setBounds(250, 0, 1350, 945);
-                pncontent.repaint();
-                tkdichvuGUI.revalidate();
-                tkdichvuGUI.repaint();
+               
                 
                
 
