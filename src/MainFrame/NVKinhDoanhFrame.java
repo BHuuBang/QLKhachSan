@@ -10,6 +10,7 @@ import NVKinhDoanhGUI.PhongGUI;
 import NVKinhDoanhGUI.TKDoanhThuGUI;
 import NVKinhDoanhGUI.TKLoaiPhongGUI;
 import NVKinhDoanhGUI.TKLuongGUI;
+//import NVKinhDoanhGUI.TKLuongGUI;
 import java.awt.*;
 import static java.awt.Frame.HAND_CURSOR;
 import java.awt.event.MouseEvent;

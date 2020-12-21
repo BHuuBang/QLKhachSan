@@ -5,6 +5,8 @@
  */
 package LeTanGUI;
 
+import SupportGUI.PhieuDat2;
+
 /**
  *
  * @author DELL
@@ -173,6 +175,11 @@ public class ThanhToanHD extends javax.swing.JPanel {
         jTextField5.setPreferredSize(new java.awt.Dimension(7, 30));
 
         jButton1.setText("...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("...");
 
@@ -355,6 +362,12 @@ public class ThanhToanHD extends javax.swing.JPanel {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        PhieuDat2 pdat = new PhieuDat2();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
