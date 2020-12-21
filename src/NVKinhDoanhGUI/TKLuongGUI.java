@@ -3,6 +3,8 @@ package NVKinhDoanhGUI;
 
 
 
+import BUS.luongBUS;
+import DTO.luongDTO;
 import Report.ExcelReport;
 import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
@@ -156,12 +158,53 @@ public class TKLuongGUI extends JPanel {
         Font font3 = new Font("Segoe UI", Font.BOLD, 26); 
         btnthongke = new JButton("Thống kê");
         btnthongke.setBounds(630,130,120,40);
+              btnthongke.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+//            txngaykt.removeAll();
+//            txngaybd.removeAll();
+            model.setRowCount(0);
+                 luongBUS bustkluong = new luongBUS();
+        if (luongBUS.dsluong == null) {
+            bustkluong.docDSluong();
+        }
+        int i=1;
+        for (luongDTO dsluong : luongBUS.dsluong) {
+            Vector row = new Vector();
+            row.add(i);
+           i++;
+            row.add(dsluong.getThang());
+            row.add(dsluong.getTonggiolam());
+            row.add(dsluong.getTongngaylam());
+            row.add(dsluong.getTongluong());
+            model.addRow(row); 
+            table.setModel(model);
+        }
+        }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+     }); 
         
         //BẢNG
         Vector header=new Vector();
         header.add("STT");
-        header.add("Phòng ban");
-        header.add("Tháng");
+        header.add("thang");
+        header.add("Tổng giờ làm");
+        header.add("Tổng ngày làm");
         header.add("Tổng lương");
          model = new DefaultTableModel(header, 0) {
             @Override
@@ -170,14 +213,19 @@ public class TKLuongGUI extends JPanel {
                     case 0:
                         return Integer.class;
                     case 1:
-                        return String.class;
+                        return Integer.class;
                     case 2:
-                        return Date.class;
+                        return Integer.class;
+                    case 3:
+                       return Integer.class;
+                    case 4:
+                        return Integer.class;
                     default:
                         return Long.class;
                 }
             }
         };
+         
         table = new JTable();
         table.setModel(model);
         table.setFillsViewportHeight(true);
@@ -297,7 +345,24 @@ public class TKLuongGUI extends JPanel {
         this.add(pncenter);
     }
 
-
+ public void setEvent(){
+        luongBUS bustkluong = new luongBUS();
+        if (luongBUS.dsluong == null) {
+            bustkluong.docDSluong();
+        }
+        int i=1;
+        for (luongDTO dshd : luongBUS.dsluong) {
+            Vector row = new Vector();
+            row.add(i);
+            i++;
+            row.add(dshd.getThang());
+            row.add(dshd.getTonggiolam());
+             row.add(dshd.getTongngaylam());
+            row.add(dshd.getTongluong());
+            model.addRow(row); 
+            table.setModel(model);
+        }
+    }
 }
 
 
