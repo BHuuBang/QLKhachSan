@@ -9,6 +9,11 @@ package MainFrame;
 //import BUS.TaiKhoanBUS;
 //import DTO.NhanVienDTO;
 //import DTO.TaiKhoanDTO;
+
+import BUS.NhanVienBUS;
+import BUS.TaiKhoanBUS;
+import DTO.NhanVienDTO;
+import DTO.TaiKhoanDTO;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
@@ -185,40 +190,35 @@ public class LoginFrame extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-//                if (e.getKeyCode() == KeyEvent.VK_ENTER) 
-//                {
+//                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 //                    String passtext = new String(matkhau.getPassword());
-//                    if (taikhoan.getText().equals("") && passtext.equals("")) 
-//                    {
+//                    if (taikhoan.getText().equals("") && passtext.equals("")) {
 //                        JOptionPane.showMessageDialog(null, "Không được để trống thông tin đăng nhập");
-//                    } else if (taikhoan.getText().equals("manager") && passtext.equals("manager")) 
-//                        {
+//                    } else if (taikhoan.getText().equals("manager") && passtext.equals("manager")) {
 //                        AdminFrame manager = new AdminFrame();
 //                        manager.ShowBang();
 //                        setVisible(false);
-//                        } 
+//                    }
+//                } else {
+//
+//                    UserBUS bususer = new UserBUS();
+//                    bususer.docDSuser();
+//                    UserDTO user = new UserDTO();
+//                    user = bususer.Tim(taikhoan.getText());
+//                    if (user == null) {
+//                        JOptionPane.showMessageDialog(null, "Tên tài khoản không tồn tại");
+//                    } else if (user.getTrangthai().equals("Khóa")) {
+//                        JOptionPane.showMessageDialog(null, "Tài khoản bị khóa vui lòng liên hệ cho quản lý");
+//                    } else if (taikhoan.getText().equals(user.getId()) && passtext.equals(user.getPass())) {
+//                        GiaoDienStaff staff = new GiaoDienStaff();
+//                        staff.ShowBang(taikhoan.getText());
+//                        setVisible(false);
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "Mật khẩu sai");
+//                    }
 //                }
             }
 
-//            else 
-//            {
-//               
-//            
-//             UserBUS bususer = new UserBUS();
-//                bususer.docDSuser();
-//                UserDTO user = new UserDTO();
-//                user = bususer.Tim(taikhoan.getText());
-//                if(user == null) JOptionPane.showMessageDialog(null, "Tên tài khoản không tồn tại");
-//                else if(user.getTrangthai().equals("Khóa")) JOptionPane.showMessageDialog(null, "Tài khoản bị khóa vui lòng liên hệ cho quản lý");
-//                else if (taikhoan.getText().equals(user.getId()) && passtext.equals(user.getPass()))
-//                {
-//                    GiaoDienStaff staff = new GiaoDienStaff();
-//                    staff.ShowBang(taikhoan.getText());
-//                    setVisible(false);
-//                }
-//                else JOptionPane.showMessageDialog(null, "Mật khẩu sai");
-//            }
-//                }
             @Override
             public void keyReleased(KeyEvent e) {
 
@@ -242,14 +242,11 @@ public class LoginFrame extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
 //                TaiKhoanBUS tkbus = new TaiKhoanBUS();
-//                tkbus.docDSTaiKhoan();
+//                tkbus.docDSTK();
 //                String password = new String(matkhau.getPassword());
-//                if (taikhoan.getText().equals("Tên tài khoản") || password.equals("Password")) 
-//                {
+//                if (taikhoan.getText().equals("Tên tài khoản") || password.equals("Password")) {
 //                    JOptionPane.showMessageDialog(null, "Không được để trống thông tin đăng nhập");
-//                } 
-//                else 
-//                {                    
+//                } else {
 //                    TaiKhoanDTO tk = new TaiKhoanDTO();
 //                    tk = tkbus.timTaikhoan(taikhoan.getText(), password);
 //
@@ -258,47 +255,67 @@ public class LoginFrame extends JFrame {
 //                    {
 //                        JOptionPane.showMessageDialog(null, "Đăng nhập không thành công");
 //                        return;
-//                    } 
-//                    else 
-//                    {
+//                    } else {
 //                        //TaiKhoanDTO tk = tkbus.timTaikhoan(taikhoan.getText(), password); // kiem tra tai khoan bi khoa             
-//                        if (tk.getTrangthai() == 0) 
-//                        {
+//                        if (tk.getTrangthai() == true) {
 //                            JOptionPane.showMessageDialog(null, "Tài khoản đã bị khóa");
 //                            return;
 //                        }
-//                        
+
 //                        if ("Admin".equals(tk.getVaitro()))//if(vaitro.equals("Admin"))
-//                        {                                              
+//                        {
 //                            AdminFrame employee = new AdminFrame();
 //                            employee.ShowBang();
 //                            setVisible(false);
-//                        } 
-//                        else 
-//                        {
+//                        } else {
 //                            if (tk.getVaitro().equals("User"))//if(vaitro.equals("User"))
 //                            {
 //                                NhanVienBUS nvbus = new NhanVienBUS();
-//                                nvbus.readDSNV();
+//                                nvbus.docDSNV();
 //                                NhanVienDTO nv = nvbus.timNhanVien(taikhoan.getText());
 //                                if (nv == null) // tồn tại tài khoản đó nhưng không thuộc về nhân viên nào
 //                                {
 //                                    JOptionPane.showMessageDialog(null, "Tài khoản chưa được sử dụng");
-//                                } else 
-//                                {
+//                                } else {
 //                                    EmployeeFrame employee = new EmployeeFrame();
 //                                    employee.ShowBang(nv.getManv());
 //                                    setVisible(false);
 //                                }
 //                            }
 //                        }
-//                    }
+//                   }
 //                }
+                TaiKhoanBUS tk = new TaiKhoanBUS();
+                tk.docDSTK();
+                TaiKhoanDTO tk1 = tk.getInfoRow(taikhoan.getText());
+                if (matkhau.getText().equals(tk1.getMatkhau())) {
+                    dispose();
+                    if (tk1.getManhanvien().contains("KD")) {
+                        NVKinhDoanhFrame nvkd = new NVKinhDoanhFrame();
+                        nvkd.ShowBang();
+                        System.out.println("True");
+                    }
+                    else if (tk1.getManhanvien().contains("KT")) {
+                        KeToanFrame nvkd = new KeToanFrame();
+                        nvkd.ShowBang();
+                        System.out.println("True");
+                    }
+                    else if (tk1.getManhanvien().contains("QL")) {
+                        QuanLyFrame nvkd = new QuanLyFrame();
+                        nvkd.ShowBang();
+                        System.out.println("True");
+                    }
+                    else if (tk1.getManhanvien().contains("LT")) {
+                        LeTanFrame nvkd = new LeTanFrame();
+                        nvkd.ShowBang();
+                        System.out.println("True");
+                    }
+                    else 
+                        JOptionPane.showMessageDialog(null, "Không tồn tại. Hãy kiểm tra lại");
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Mật khẩu sai. Hãy kiểm tra lại");
             }
-
-
-            
-            
 
             @Override
             public void mousePressed(MouseEvent e) {
@@ -334,7 +351,6 @@ public class LoginFrame extends JFrame {
         this.setVisible(true);
     }
 
-
     public static void main(String[] args) {
         //UIManager.setLookAndFeel( "com.seaglasslookandfeel.SeaGlassLookAndFeel" );
         LoginFrame test = new LoginFrame();
@@ -342,4 +358,3 @@ public class LoginFrame extends JFrame {
     }
 
 }
-

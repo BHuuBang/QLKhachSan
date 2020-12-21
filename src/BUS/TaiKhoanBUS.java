@@ -15,18 +15,20 @@ import javax.swing.JOptionPane;
  * @author Trang
  */
 public class TaiKhoanBUS {
-  public static ArrayList<TaiKhoanDTO> dstk;  
-   public TaiKhoanBUS() {
+
+    public static ArrayList<TaiKhoanDTO> dstk;
+
+    public TaiKhoanBUS() {
     }
 
     public void docDSTK() {
         TaiKhoanDAO data = new TaiKhoanDAO();
         if (dstk == null) {
-            dstk = new ArrayList<TaiKhoanDTO>();           
+            dstk = new ArrayList<TaiKhoanDTO>();
         }
         dstk = data.docdstaikhoan();
     }
-    
+
     public boolean Them(TaiKhoanDTO tk) {
 //        if(sp.getMasach().equals(""))
 //        {
@@ -66,42 +68,36 @@ public class TaiKhoanBUS {
 //            return false;
 //        }
 //        
-        if(tk.getManhanvien().equals(""))
-        {
-            JOptionPane.showMessageDialog(null,"Vui lòng nhập mã nhân viên");
+        if (tk.getManhanvien().equals("")) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập mã nhân viên");
             return false;
         }
-        if(tk.getTentaikhoan().equals(""))
-        {
-            JOptionPane.showMessageDialog(null,"Vui lòng nhập tên tài khoản");
+        if (tk.getTentaikhoan().equals("")) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập tên tài khoản");
             return false;
         }
-        
-        if(tk.getMatkhau().equals(""))
-        {
-            JOptionPane.showMessageDialog(null,"Vui lòng nhập mật khẩu");
+
+        if (tk.getMatkhau().equals("")) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập mật khẩu");
             return false;
         }
-        
-         
-        
+
         TaiKhoanDAO data = new TaiKhoanDAO();
         data.Them(tk);
         JOptionPane.showMessageDialog(null, "Thêm thành công");
         dstk.add(tk);
         return true;
     }
-    
-   public boolean Sua(TaiKhoanDTO tk) {
-       int index = -1;
-       for (TaiKhoanDTO temptk : TaiKhoanBUS.dstk) {
-           index++;
-           if(temptk.getTentaikhoan().equals(tk.getTentaikhoan()))
-           {
-               System.out.println(index);
-           }
-       }
-      /*   if(nv.getManhanvien().equals(""))
+
+    public boolean Sua(TaiKhoanDTO tk) {
+        int index = -1;
+        for (TaiKhoanDTO temptk : TaiKhoanBUS.dstk) {
+            index++;
+            if (temptk.getTentaikhoan().equals(tk.getTentaikhoan())) {
+                System.out.println(index);
+            }
+        }
+        /*   if(nv.getManhanvien().equals(""))
         {
             JOptionPane.showMessageDialog(null,"Vui lòng nhập mã nhân viên");
             return false;
@@ -111,26 +107,25 @@ public class TaiKhoanBUS {
             JOptionPane.showMessageDialog(null,"Vui lòng nhập mã chức vụ");
             return false;
         }*/
-      
-        dstk.set(index,tk);
-       TaiKhoanDAO data = new TaiKhoanDAO();
+
+        dstk.set(index, tk);
+        TaiKhoanDAO data = new TaiKhoanDAO();
         data.Sua(tk);
         JOptionPane.showMessageDialog(null, "Sửa thành công");
-       /* dsnv.add(nv);*/
+        /* dsnv.add(nv);*/
         return true;
-     
+
     }
-   
-   public boolean Xoa(String manv){
-       int index = -1;
-       for (TaiKhoanDTO temp : dstk) {
-           index++;
-           if(temp.getManhanvien().equals(manv))
-           {
-               System.out.println(index);
-           }
-       }
-      /*   if(nv.getManhanvien().equals(""))
+
+    public boolean Xoa(String manv) {
+        int index = -1;
+        for (TaiKhoanDTO temp : dstk) {
+            index++;
+            if (temp.getManhanvien().equals(manv)) {
+                System.out.println(index);
+            }
+        }
+        /*   if(nv.getManhanvien().equals(""))
         {
             JOptionPane.showMessageDialog(null,"Vui lòng nhập mã nhân viên");
             return false;
@@ -140,23 +135,18 @@ public class TaiKhoanBUS {
             JOptionPane.showMessageDialog(null,"Vui lòng nhập mã chức vụ");
             return false;
         }*/
-      
-  /*  dsnv.set(index);*/
-      TaiKhoanDAO data = new TaiKhoanDAO();
+
+ /*  dsnv.set(index);*/
+        TaiKhoanDAO data = new TaiKhoanDAO();
         data.Xoa(manv);
         JOptionPane.showMessageDialog(null, "Xóa thành công");
-        
+
         return true;
-    
-      
-     
-       
-   }
-   
-   
-   
-        public TaiKhoanDTO getInfoRow(String Ten) {
-        TaiKhoanDTO tk1= new TaiKhoanDTO();
+
+    }
+
+    public TaiKhoanDTO getInfoRow(String Ten) {
+        TaiKhoanDTO tk1 = new TaiKhoanDTO();
         docDSTK();
         for (TaiKhoanDTO temptk : TaiKhoanBUS.dstk) {
             if (temptk.getTentaikhoan().equals(Ten)) {
@@ -165,6 +155,5 @@ public class TaiKhoanBUS {
             }
         }
         return tk1;
-         }
-
+    }
 }

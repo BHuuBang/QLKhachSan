@@ -300,7 +300,12 @@ public class TaiKhoanGUI extends JPanel {
                 tk.setTentaikhoan(txttentaikhoan.getText());
                 tk.setMatkhau(pfmatkhau.getText());
                 tk.setManhanvien(txtmanhanvien.getText());
-                tk.setTrangthai(chontrangthai.getSelectedItem().toString());
+                if(chontrangthai.getSelectedItem().equals("Hoạt động")){
+                    tk.setTrangthai(false);
+                }
+                else{
+                    tk.setTrangthai(true);
+                };
                 
                
                
@@ -378,7 +383,12 @@ public class TaiKhoanGUI extends JPanel {
                 tk.setTentaikhoan(txttentaikhoan.getText());
                 tk.setMatkhau(pfmatkhau.getText());
                 tk.setManhanvien(txtmanhanvien.getText());
-                tk.setTrangthai(chontrangthai.getSelectedItem().toString());
+                if(chontrangthai.getSelectedItem().equals("Hoạt động")){
+                    tk.setTrangthai(false);
+                }
+                else{
+                    tk.setTrangthai(true);
+                };
               
              
                  TaiKhoanBUS bus = new TaiKhoanBUS();
@@ -552,7 +562,12 @@ public class TaiKhoanGUI extends JPanel {
                 tk.setTentaikhoan(txttentaikhoan.getText());
                 tk.setMatkhau(pfmatkhau.getText());
                 tk.setManhanvien(txtmanhanvien.getText());
-                tk.setTrangthai(chontrangthai.getSelectedItem().toString());
+                if(chontrangthai.getSelectedItem().equals("Hoạt động")){
+                    tk.setTrangthai(false);
+                }
+                else{
+                    tk.setTrangthai(true);
+                };
               
                
                 TaiKhoanBUS bus = new TaiKhoanBUS();
@@ -668,7 +683,7 @@ public class TaiKhoanGUI extends JPanel {
                    txttentaikhoan.setText(tk.getTentaikhoan());
                     pfmatkhau.setText(tk.getMatkhau());
                    txtmanhanvien.setText(tk.getManhanvien());
-                    if (tk.getTrangthai().equals("Hoạt động")) 
+                    if (tk.getTrangthai()==false) 
                     {
                         chontrangthai.setSelectedIndex(1);
                     }

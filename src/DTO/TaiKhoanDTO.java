@@ -10,10 +10,11 @@ package DTO;
  * @author Trang
  */
 public class TaiKhoanDTO {
-    public String manv, tentaikhoan, matkhau, trangthai;
+    public String manv, tentaikhoan, matkhau;
+    public boolean trangthai;
     public TaiKhoanDTO(){}
     
-    public TaiKhoanDTO(String manv, String tentaikhoan, String matkhau, String trangthai){
+    public TaiKhoanDTO(String manv, String tentaikhoan, String matkhau, boolean trangthai){
         this.manv=manv;
         this.tentaikhoan= tentaikhoan;
         this.matkhau=matkhau;
@@ -31,10 +32,10 @@ public class TaiKhoanDTO {
     public void setTentaikhoan(String tentaikhoan){
         this.tentaikhoan = tentaikhoan;
     }
-    public String getTrangthai(){
+    public boolean getTrangthai(){
         return trangthai;
     }
-    public void setTrangthai(String trangthai){
+    public void setTrangthai(boolean trangthai){
         this.trangthai = trangthai;
     
     }
