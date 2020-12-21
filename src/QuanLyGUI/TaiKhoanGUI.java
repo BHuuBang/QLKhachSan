@@ -321,7 +321,11 @@ public class TaiKhoanGUI extends JPanel {
                     row.add(tk.getTentaikhoan());
                     row.add(tk.getMatkhau());
                     row.add(tk.getManhanvien());
-                    row.add(tk.getTrangthai());
+                    if(tk.getTrangthai()==false){
+            row.add("Hoạt động");}
+            else{
+            row.add("Khóa");
+            }
                    
                     
                     model.addRow(row);
@@ -664,8 +668,11 @@ public class TaiKhoanGUI extends JPanel {
             row.add(tk.getMatkhau());
             row.add(tk.getManhanvien());
            // row.add(sp.getMa());
-            row.add(tk.getTrangthai());
-           
+            if(tk.getTrangthai()==false){
+            row.add("Hoạt động");}
+            else{
+            row.add("Khóa");
+            }
             model.addRow(row);
         }
         table.setModel(model);
